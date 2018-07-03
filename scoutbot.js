@@ -26,21 +26,12 @@ client.on("message", message => {
     if (message.content === '|help') {
         if (message.author.bot) return;
         console.log("Somebody just used the help command.")
-        message.channel.send(`Usage:
-        |(command)
-        Commands:
-        invite | Gives you an invite link.
-        ping | Pings the bot.
-        info | Displays info about the bot.
-        help | Sends this.
-        kick | Kicks the mentioned user.
-        stats | Shows stats about the bot.
-        serverlist | Lists current server names bot is in. (Will be removed later!)`)
+        message.channel.send(`Link to the command list page: https://discord-scoutbot.github.io/commands/`)
     }
     if (message.content === '|invite') {
         if (message.author.bot) return;
         console.log("Somebody just used the invite command.")
-        message.channel.send("**Sorry, the invite isn't ready just yet.**")
+        message.channel.send("Bot Invite: https://discordapp.com/api/oauth2/authorize?client_id=439205929972531203&permissions=80014531&scope=bot")
     }
     if (message.content === '|ping') {
         if (message.author.bot) return;
@@ -50,29 +41,26 @@ client.on("message", message => {
             msg.edit(`Took ${msg.createdTimestamp - message.createdTimestamp}ms.`);
         });
     }
-    if (message.content === '|info') {
+    if (message.content === '|stats') {
         if (message.author.bot) return;
         console.log("Somebody just used the info command.")
         message.channel.send('Hold on a second...')
         .then(msg => {
-            msg.edit(`Current bot owner: **SpikeyScout#5617**. Type |help for commands. I'm with ${client.guilds.size} guilds and ${client.users.size} users. Current ping is ${msg.createdTimestamp - message.createdTimestamp}ms.`);
+            msg.edit(`I'm with ${client.guilds.size} guilds and ${client.users.size} users. Current ping is ${msg.createdTimestamp - message.createdTimestamp}ms.`);
         });
     }
-    if (message.content.startsWith("|kill")) {
-        message.channel.send(`no u`)
-    }
-    if (message.content.startsWith("|stats")) {
-        message.channel.send(`In **${client.guilds.size}** servers with **${client.users.size}** users!`)
-    }
     if (message.content.startsWith("|uptime")) {
+        console.log('Somebody just used the uptime command.')
         message.channel.send(`I have been up for ${client.uptime * .001} seconds.`)
     }
     if (message.content.startsWith("|serverlist")) {
+        console.log('Somebody just used the serverlist command.')
         message.channel.send(`I am in the following servers: ${client.guilds.map(g=>g.name).join('\n')}`)
     }
-    if (message.content.startsWith("|embed")) {
+    if (message.content.startsWith("|info")) {
+        console.log('Somebody just the info command.')
         message.channel.send({embed: {
-            color: 3447003,
+            color: 7506394,
             author: {
               name: client.user.username,
               icon_url: client.user.avatarURL
@@ -86,11 +74,11 @@ client.on("message", message => {
               },
               {
                 name: "For more info and commands...",
-                value: "Type ***|help***!"
+                value: "Type ***|help***! For more stats about the bot, type ***|stats***!"
               },
               {
-                name: "Feel free to add me if you have any questions!",
-                value: '~~or you can just join the discord server~~'
+                name: "Scout-Bot's Website!",
+                value: 'Click [here](https://discord-scoutbot.github.io/). **This is an unfished website!**'
               }
             ],
             timestamp: new Date(),
