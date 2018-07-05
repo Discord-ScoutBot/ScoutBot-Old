@@ -91,3 +91,4 @@ client.on("message", message => {
     }
 });
 client.login(config.token)
+// Welcome everyone, to the messiest code ever!
