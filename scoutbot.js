@@ -115,13 +115,6 @@ client.on("message", message => {
     console.log('this is so sad, alexa play despacito')
     message.channel.send("***THIS IS SO SAD*** ɴᴏᴡ ᴘʟᴀʏɪɴɢ: Despacito  ───────────⚪────── ◄◄⠀▐▐ ⠀►►⠀⠀ ⠀ 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼 ⠀ ───○ 🔊⠀ ᴴᴰ ⚙️ | <https://www.youtube.com/watch?v=kJQP7kiw5Fk>")
     }
-    if (message.content.startsWith("|status")) { // owner only
-    if (message.author.id !== config.ownerID) return;
-    var command = message.content.split(" ")[0].slice(config.prefix.length).toLowerCase()
-    var args = message.content.split(" ").slice(1);
-    let suffix = args.join(" ");    
-    msg.channel.send(suffix)
-    }
 });
 client.login(config.token)
 // messiest code ever xd
