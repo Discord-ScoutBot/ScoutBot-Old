@@ -89,6 +89,39 @@ client.on("message", message => {
           }
         });
     }
+    if (message.content.startsWith("|roll")) {
+    console.log('Somebody just used the roll command.')
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+      
+      message.channel.send(getRandomInt(100));
+    }
+    if (message.content.startsWith("|iq")) {
+    console.log('Somebody just used the iq command.')
+    function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+    }
+    message.reply('your IQ is...');
+    return message.channel.send(getRandomInt(300));
+    }
+    if (message.content.startsWith("|die")) { // owner only
+    if(message.author.id !== config.ownerID) return;
+    const thinkmyself = client.emojis.find("name", "ThinkMyself");
+    message.reply(`${thinkmyself} see you in hell`);
+        return client.destroy()
+    }
+    if (message.content.startsWith("alexa play despacito")) {
+    console.log('this is so sad, alexa play despacito')
+    message.channel.send("***THIS IS SO SAD*** ɴᴏᴡ ᴘʟᴀʏɪɴɢ: Despacito  ───────────⚪────── ◄◄⠀▐▐ ⠀►►⠀⠀ ⠀ 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼 ⠀ ───○ 🔊⠀ ᴴᴰ ⚙️ | <https://www.youtube.com/watch?v=kJQP7kiw5Fk>")
+    }
+    if (message.content.startsWith("|status")) { // owner only
+    if (message.author.id !== config.ownerID) return;
+    var command = message.content.split(" ")[0].slice(config.prefix.length).toLowerCase()
+    var args = message.content.split(" ").slice(1);
+    let suffix = args.join(" ");    
+    msg.channel.send(suffix)
+    }
 });
 client.login(config.token)
-// Welcome everyone, to the messiest code ever!
+// messiest code ever xd
