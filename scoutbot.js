@@ -41,14 +41,6 @@ client.on("message", message => {
             msg.edit(`Took ${msg.createdTimestamp - message.createdTimestamp}ms.`);
         });
     }
-    if (message.content === '|stats') {
-        if (message.author.bot) return;
-        console.log("Somebody just used the info command.")
-        message.channel.send('Hold on a second...')
-        .then(msg => {
-            msg.edit(`I'm with ${client.guilds.size} guilds and ${client.users.size} users. Current ping is ${msg.createdTimestamp - message.createdTimestamp}ms.`);
-        });
-    }
     if (message.content.startsWith("|uptime")) {
         console.log('Somebody just used the uptime command.')
         message.channel.send(`I have been up for ${client.uptime * .001} seconds.`)
@@ -84,7 +76,7 @@ client.on("message", message => {
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "Scout-Bot"
+              text: "Scout-Bot v1.11"
             }
           }
         });
@@ -104,13 +96,7 @@ client.on("message", message => {
     }
     message.reply('your IQ is...');
     return message.channel.send(getRandomInt(300));
-    }
-    if (message.content.startsWith("|die")) { // owner only
-    if(message.author.id !== config.ownerID) return;
-    const thinkmyself = client.emojis.find("name", "ThinkMyself");
-    message.reply(`${thinkmyself} see you in hell`);
-        return client.destroy()
-    }
+  }
     if (message.content.startsWith("alexa play despacito")) {
     console.log('this is so sad, alexa play despacito')
     message.channel.send("***THIS IS SO SAD*** ɴᴏᴡ ᴘʟᴀʏɪɴɢ: Despacito  ───────────⚪────── ◄◄⠀▐▐ ⠀►►⠀⠀ ⠀ 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼 ⠀ ───○ 🔊⠀ ᴴᴰ ⚙️ | <https://www.youtube.com/watch?v=kJQP7kiw5Fk>")
