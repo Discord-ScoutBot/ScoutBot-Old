@@ -4,7 +4,7 @@ const config = require("./config.json");
 client.on('ready', () => {
     client.user.setPresence({ game: { name: 'your commands! |help', type: 2 } });
     console.log(`Logged in as ${client.user.tag}!`);
-  });
+  }); 
 
 client.on("message", message => {
     if (message.content.startsWith("|kick")) {
@@ -72,7 +72,7 @@ client.on("message", message => {
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "Scout-Bot v1.11"
+              text: "Scout-Bot v1.12"
             }
           }
         });
@@ -83,15 +83,15 @@ client.on("message", message => {
         return Math.floor(Math.random() * Math.floor(max));
       }
       
-      message.channel.send(getRandomInt(100));
+      message.channel.send("Rolling 1-100!")
+      message.reply(`you rolled a ${getRandomInt(100)}! `)
     }
     if (message.content.startsWith("|iq")) {
     console.log('Somebody just used the iq command.')
     function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
     }
-    message.reply('your IQ is...');
-    return message.channel.send(getRandomInt(300));
+    message.reply(`your IQ is ${getRandomInt(100)}!`);
   }
   if (message.content.startsWith("|d20")) {
   console.log('Someone just rolled 20!')
