@@ -10,16 +10,12 @@ client.on("message", message => {
     if (message.content.startsWith("|kick")) {
         if (message.author.bot) return;
         console.log("Somebody just tried to kick a member.")
-        // Easy way to get member object though mentions.
         var member= message.mentions.members.first();
         if (!message.member.permissions.has(`KICK_MEMBERS`)) return message.channel.send(`You don\'t have permission to kick members.`);
         if(message.mentions.users.size === 0) return message.channel.send('Please specify a member to kick.')
-        // Kick
         member.kick().then((member) => {
-            // Successmessage
             message.channel.send("Kicked " + member.displayName + ".");
         }).catch(() => {
-             // Failmessage
             message.channel.send("The command failed! You may not have the right permission or the user is higher than me.");
         });
     }
@@ -97,10 +93,14 @@ client.on("message", message => {
     message.reply('your IQ is...');
     return message.channel.send(getRandomInt(300));
   }
-    if (message.content.startsWith("alexa play despacito")) {
-    console.log('this is so sad, alexa play despacito')
-    message.channel.send("***THIS IS SO SAD*** ɴᴏᴡ ᴘʟᴀʏɪɴɢ: Despacito  ───────────⚪────── ◄◄⠀▐▐ ⠀►►⠀⠀ ⠀ 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼 ⠀ ───○ 🔊⠀ ᴴᴰ ⚙️ | <https://www.youtube.com/watch?v=kJQP7kiw5Fk>")
-    }
+  if (message.content.startsWith("|d20")) {
+  console.log('Someone just rolled 20!')
+  function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+  }
+  message.reply('you rolled a...')
+  return message.channel.send(getRandomInt(20))
+}
 });
 client.login(config.token)
 // messiest code ever xd
