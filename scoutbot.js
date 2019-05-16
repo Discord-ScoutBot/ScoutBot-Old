@@ -41,10 +41,6 @@ client.on("message", message => {
         console.log('Somebody just used the uptime command.')
         message.channel.send(`I have been up for ${client.uptime * .001} seconds.`)
     }
-    if (message.content.startsWith("|serverlist")) {
-        console.log('Somebody just used the serverlist command.')
-        message.channel.send(`I am in the following servers: ${client.guilds.map(g=>g.name).join('\n')}`)
-    }
     if (message.content.startsWith("|info")) {
         console.log('Somebody just the info command.')
         message.channel.send({embed: {
@@ -82,7 +78,6 @@ client.on("message", message => {
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
       }
-      
       message.channel.send("Rolling 1-100!")
       message.reply(`you rolled a ${getRandomInt(100)}! `)
     }
@@ -98,8 +93,8 @@ client.on("message", message => {
   function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
   }
-  message.reply('you rolled a...')
-  return message.channel.send(getRandomInt(20))
+  message.channel.send("Rolling 1-20!")
+  message.reply(`you rolled a ${getRandomInt(100)}! `)
 }
 });
 client.login(config.token)
