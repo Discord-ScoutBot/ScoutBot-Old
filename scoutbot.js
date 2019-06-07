@@ -22,7 +22,7 @@ client.on("message", message => {
     if (message.content === '|help') {
         if (message.author.bot) return;
         console.log("Somebody just used the help command.")
-        message.channel.send(`Link to the command list page: https://discord-scoutbot.github.io/commands/`)
+        message.channel.send(`Link to the command list page: http://scoutbot.spikeyscout.xyz/commands/`)
     }
     if (message.content === '|invite') {
         if (message.author.bot) return;
@@ -62,7 +62,7 @@ client.on("message", message => {
               },
               {
                 name: "Scout-Bot's Website!",
-                value: 'Click [here](https://discord-scoutbot.github.io/). **This is an unfished website!**'
+                value: 'Click [here](http://scoutbot.spikeyscout.xyz/). **This is an unfished website!**'
               }
             ],
             timestamp: new Date(),
