@@ -6,7 +6,7 @@ client.on('ready', () => {
     client.user.setPresence({ game: { name: 'your commands! |help', type: 2 } });
     console.log(`Logged in as ${client.user.tag}!`);
   }); 
-\\ Core Commands
+\\ Moderation
 client.on("message", message => {
     if (message.content.startsWith("|kick")) {
         if (message.author.bot) return;
@@ -20,6 +20,7 @@ client.on("message", message => {
             message.channel.send("The command failed! You may not have the right permission or the user is higher than me.");
         });
     }
+    \\ Core Commands
     if (message.content === '|help') {
         if (message.author.bot) return;
         console.log("Somebody just used the help command.")
@@ -74,6 +75,7 @@ client.on("message", message => {
           }
         });
     }
+\\ Misc Commands
     if (message.content.startsWith("|roll")) {
     console.log('Somebody just used the roll command.')
     function getRandomInt(max) {
