@@ -31,6 +31,7 @@ client.on("message", message => {
         console.log("Somebody just used the invite command.")
         message.channel.send("Bot Invite: https://discordapp.com/api/oauth2/authorize?client_id=439205929972531203&permissions=80014531&scope=bot")
     }
+\\ Stats
     if (message.content === '|ping') {
         if (message.author.bot) return;
         console.log("Somebody just used the ping command.")
@@ -51,31 +52,31 @@ client.on("message", message => {
               name: client.user.username,
               icon_url: client.user.avatarURL
             },
-            title: "Scout-Bot's Github",
+            title: "haha code",
             url: "https://github.com/Discord-ScoutBot",
             description: "Scout-Bot is a Discord Bot run by SpikeyScout#5617!",
             fields: [{
                 name: "Offical Discord Server",
-                value: "Click [here](https://discord.gg/pPBUYhz) to join!"
+                value: "As of right now, there is no Discord server. Please contact the DiscordTag above if you have any problems."
               },
               {
-                name: "For more info and commands...",
-                value: "Type ***|help***! For more stats about the bot, type ***|stats***!"
+                name: "Commands and Stats",
+                value: "Please visit the [help site](http://scoutbot.spikeyscout.xyz/help)for commands, and for stats type ***|stats***!"
               },
               {
                 name: "Scout-Bot's Website!",
-                value: 'Click [here](http://scoutbot.spikeyscout.xyz/). **This is an unfished website!**'
+                value: 'http://scoutbot.spikeyscout.xyz/. *Currently a Work-in-Progress.'
               }
             ],
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "Scout-Bot v1.12"
+              text: "Scout-Bot v1.2 - Now with even messier code!"
             }
           }
         });
     }
-\\ Misc Commands
+\\ Math/Dice rolling Commands
     if (message.content.startsWith("|roll")) {
     console.log('Somebody just used the roll command.')
     function getRandomInt(max) {
@@ -101,4 +102,4 @@ client.on("message", message => {
 }
 });
 client.login(config.token)
-// messiest code ever xd
+\\ ahaahahahaha messy code !
