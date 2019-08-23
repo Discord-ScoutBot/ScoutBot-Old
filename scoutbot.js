@@ -52,7 +52,7 @@ client.on("message", message => {
               name: client.user.username,
               icon_url: client.user.avatarURL
             },
-            title: "haha code",
+            title: "open source n shit!",
             url: "https://github.com/Discord-ScoutBot",
             description: "Scout-Bot is a Discord Bot run by SpikeyScout#5617!",
             fields: [{
@@ -61,17 +61,17 @@ client.on("message", message => {
               },
               {
                 name: "Commands and Stats",
-                value: "Please visit the [help site](http://scoutbot.spikeyscout.xyz/help)for commands, and for stats type ***|stats***!"
+                value: "Please visit the [help site](http://scoutbot.spikeyscout.xyz/commands)for commands, and for stats type ***|stats***!"
               },
               {
                 name: "Scout-Bot's Website!",
-                value: 'http://scoutbot.spikeyscout.xyz/. *Currently a Work-in-Progress.'
+                value: 'http://scoutbot.spikeyscout.xyz/. *Currently a Work-in-Progress.*'
               }
             ],
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "Scout-Bot v1.2 - Now with even messier code!"
+              text: "Scout-Bot v1.3 - the robot takeover of the world is nigh"
             }
           }
         });
@@ -102,4 +102,7 @@ client.on("message", message => {
 }
 });
 client.login(config.token)
+\\ you thought you could take the token but you cant ...
+
+
 \\ ahaahahahaha messy code !
