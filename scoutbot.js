@@ -24,7 +24,7 @@ client.on("message", message => {
     if (message.content === '|help') {
         if (message.author.bot) return;
         console.log("Somebody just used the help command.")
-        message.channel.send(`Link to the command list page: http://scoutbot.spikeyscout.xyz/commands/`)
+        message.channel.send(`Link to the command list page: http://old.spikeyscout.xyz/commands/`)
     }
     if (message.content === '|invite') {
         if (message.author.bot) return;
@@ -61,11 +61,11 @@ client.on("message", message => {
               },
               {
                 name: "Commands and Stats",
-                value: "Please visit the [help site](http://scoutbot.spikeyscout.xyz/commands)for commands, and for stats type ***|stats***!"
+                value: "Please visit the [help site](http://old.spikeyscout.xyz/commands)for commands, and for stats type ***|stats***!"
               },
               {
-                name: "Scout-Bot's Website!",
-                value: 'http://scoutbot.spikeyscout.xyz/. *Currently a Work-in-Progress.*'
+                name: "Scout-Bot's Old Website!",
+                value: 'http://old.spikeyscout.xyz/. *Currently a Work-in-Progress.*'
               }
             ],
             timestamp: new Date(),
